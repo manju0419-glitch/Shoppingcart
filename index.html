@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopCart — Tech Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────── -->
+<nav>
+  <a href="index.jsp" class="nav-logo">Shop<span>Cart</span></a>
+  <div class="nav-right">
+    <a href="viewCart" class="cart-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Toast ───────────────────────────────── -->
+<div id="toast">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+  <span class="toast-msg"></span>
+</div>
+
+<!-- ── Hero ────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-tag">New arrivals · 2024</div>
+  <h1>Premium <span class="accent">Tech</span><br>for Creators</h1>
+  <p class="hero-sub">
+    Curated hardware that helps you build, design, and ship.
+    No noise — just the tools that matter.
+  </p>
+</section>
+
+<!-- ── Product Grid ────────────────────────── -->
+<section class="products-section">
+  <div class="section-header">
+    <span class="section-title">6 products</span>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- Laptop 1 -->
+    <div class="product-card">
+      <span class="product-emoji">💻</span>
+      <div>
+        <div class="product-category">Laptops</div>
+        <div class="product-name">MacBook Pro</div>
+      </div>
+      <p class="product-desc">
+        Apple M3 chip, 16GB RAM, 512GB SSD.
+        The ultimate laptop for professionals.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>1,29,999</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p1">
+          <button type="submit" class="add-btn" data-name="MacBook Pro">
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Laptop 2 -->
+    <div class="product-card">
+      <span class="product-emoji">🖥️</span>
+      <div>
+        <div class="product-category">Laptops</div>
+        <div class="product-name">Dell XPS 15</div>
+      </div>
+      <p class="product-desc">
+        Intel Core i9, 32GB RAM, 1TB SSD.
+        Stunning 4K OLED display for power users.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>1,09,999</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p2">
+          <button type="submit" class="add-btn" data-name="Dell XPS 15">
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Mouse -->
+    <div class="product-card">
+      <span class="product-emoji">🖱️</span>
+      <div>
+        <div class="product-category">Peripherals</div>
+        <div class="product-name">Logitech MX Master 3</div>
+      </div>
+      <p class="product-desc">
+        Advanced wireless mouse with ergonomic design
+        and MagSpeed electromagnetic scroll wheel.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>7,999</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p3">
+          <button type="submit" class="add-btn" data-name="Logitech MX Master 3">
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="product-card">
+      <span class="product-emoji">⌨️</span>
+      <div>
+        <div class="product-category">Peripherals</div>
+        <div class="product-name">Mechanical Keyboard</div>
+      </div>
+      <p class="product-desc">
+        Cherry MX Brown switches, RGB backlit,
+        compact TKL layout. Built for coders.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>5,499</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p4">
+          <button type="submit" class="add-btn" data-name="Mechanical Keyboard">
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Headphones -->
+    <div class="product-card">
+      <span class="product-emoji">🎧</span>
+      <div>
+        <div class="product-category">Audio</div>
+        <div class="product-name">Sony WH-1000XM5</div>
+      </div>
+      <p class="product-desc">
+        Industry-leading noise cancellation,
+        30-hour battery, Hi-Res Audio certified.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>29,999</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p5">
+          <button type="submit" class="add-btn" data-name="Sony WH-1000XM5">
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Monitor -->
+    <div class="product-card">
+      <span class="product-emoji">🖥️</span>
+      <div>
+        <div class="product-category">Displays</div>
+        <div class="product-name">Samsung 27" 4K Monitor</div>
+      </div>
+      <p class="product-desc">
+        IPS panel, 144Hz refresh, USB-C hub,
+        HDR600. The perfect developer display.
+      </p>
+      <div class="product-footer">
+        <div class="product-price"><sub>₹</sub>34,999</div>
+        <form method="post" action="addToCart" style="margin:0;">
+          <input type="hidden" name="productId" value="p6">
+          <button type="submit" class="add-btn" data-name='Samsung 27" 4K Monitor'>
+            + Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div><!-- /product-grid -->
+</section>
+
+<script src="js/cart.js"></script>
+</body>
+</html>
